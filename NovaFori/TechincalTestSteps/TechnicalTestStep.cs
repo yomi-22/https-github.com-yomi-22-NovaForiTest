@@ -19,7 +19,6 @@ namespace NovaForiTechnicalTest.Steps
 
         public TechnicalTestStep(IWebDriver webDriver)
         {
-
             WebDriver = webDriver;
         }
 

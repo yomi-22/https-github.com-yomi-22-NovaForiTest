@@ -56,7 +56,7 @@ namespace NovaForiTechnicalTest.Drivers
         public int CountLinksInStickyNavigationPage()
         {
             // Wait until the pricing link element is visible 
-            Wait.Until(ExpectedConditions.ElementExists(PricingLinkElement));
+            Wait.Until(ExpectedConditions.ElementIsVisible(PricingLinkElement));
             int linkCount = LeftNavigationLists.Count;
             return linkCount;
         }
