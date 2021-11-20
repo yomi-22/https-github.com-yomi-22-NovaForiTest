@@ -21,7 +21,7 @@ namespace NovaForiTechnicalTest.Drivers
         private IWebElement ResourcesDropdown => WebDriver.FindElement(By.Id("w-dropdown-list-0"));
         private IWebElement Faqs => WebDriver.FindElement(FaqsElement);
         private By FaqsElement => By.CssSelector("a.dropdown-link w-dropdown-link");
-        private List<IWebElement> LeftNavigationLists => WebDriver.FindElements(By.CssSelector(" div.sticky-leftnav")).ToList();
+        private List<IWebElement> LeftNavigationLists => WebDriver.FindElements(By.CssSelector("div.sticky-leftnav")).ToList();
         private IWebElement PricingLink => WebDriver.FindElement(PricingLinkElement);
         private By PricingLinkElement => By.CssSelector("a[href='#faq-pricing']");
         private IWebElement IntegrationsLink => WebDriver.FindElement(By.CssSelector("a[href='#faq-integrations']"));
@@ -91,7 +91,7 @@ namespace NovaForiTechnicalTest.Drivers
                 if (availableLink.Any(x => x.Equals(getIndustryValue, StringComparison.OrdinalIgnoreCase)))
                     IndustryLink.Click();
             }
-            // this will return not found 404 error message if any of the click cant be clicked
+            // this will return not found 404 error message if any of the click can't be clicked
             catch (NotFoundException ex)
             {
                 Console.WriteLine("Not found 404");
