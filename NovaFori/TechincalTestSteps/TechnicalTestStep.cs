@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using NovaForiTechnicalTest.Hooks;
 
 namespace NovaForiTechnicalTest.Steps
 {
@@ -13,25 +14,13 @@ namespace NovaForiTechnicalTest.Steps
     public class TechnicalTestStep
 
     {
-        IWebDriver WebDriver;
+        private IWebDriver WebDriver;
 
         public LinkPage LinkPage { get; set; }
 
         public TechnicalTestStep(IWebDriver webDriver)
         {
             WebDriver = webDriver;
-        }
-
-        [BeforeScenario()]
-        public void setup()
-        {
-            LinkPage = new LinkPage(WebDriver);
-        }
-
-        [AfterScenario()]
-        public void tearDown()
-        {
-            WebDriver.Quit();
         }
 
         [Given(@"the user is on homepage")]
